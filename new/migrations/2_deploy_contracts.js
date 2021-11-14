@@ -1,5 +1,5 @@
-const Words = artifacts.require("Words");
+const Invoice = artifacts.require("Invoice");
 
 module.exports = function (deployer) {
-  deployer.deploy(Words);
+  deployer.deploy(Invoice);
 };
