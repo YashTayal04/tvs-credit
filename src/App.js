@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import InfoDisplay from "./components/InfoDisplay";
 // import Footer from "./components/Footer";
 import Web3 from "web3";
+import Seller from "./components/Seller";
 
 var provider = new Web3(
   new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545")
@@ -55,7 +56,7 @@ var MyContract = provider.eth.contract([
   },
 ]);
 
-var contract = MyContract.at("0x495b133d3783dc9199703EC15C678cbEeE0B69Dd");
+var contract = MyContract.at("0xDbF48d7fF37A67f9f5F1Ec69CD9ca51bf4dcAd01");
 console.log(contract);
 
 var balance = provider.eth.getBalance(provider.eth.defaultAccount);
@@ -79,7 +80,7 @@ class App extends Component {
   }
 
   storeWord = () => {
-    return contract.setWord("Yash");
+    return contract.setWord("Abhishek");
   };
 
   getWord = () => {
@@ -115,6 +116,7 @@ class App extends Component {
           word={this.state.word}
           gasPrice={this.state.gasPrice}
         />
+        <Seller></Seller>
         {/* <Footer /> */}
       </div>
     );
